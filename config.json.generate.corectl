@@ -1,0 +1,136 @@
+cat << CTAG
+{
+	name:CORE CONTROL,
+		elements:[
+			{ SPane:{
+				title:"Info"
+			}},
+			{ SDescription:{
+					description:"Use only to trigger CPU0 and CPU4 online or when no Hotplug driver installed. MIGHT NOT WORK WHEN HOTPLUG DRIVER PRESENT."
+				}},
+			{ SPane:{
+				title:"Live Cpu State"
+			}},
+				{ SLiveLabel:{
+					refresh:500,
+					style:italic,
+					action:"live CPUOnlineOffline"
+				}},
+			{ SSpacer:{
+						height: 2
+					}},
+			{ SPane:{
+				title:"Core Control"
+			}},
+				{ SLiveLabel:{
+					refresh:0,
+					style:italic,
+					action:"live CpuClusterA53"
+				}},
+			`if [ -f "/sys/devices/system/cpu/cpu0/online" ]; then
+			CPU0=\`$BB cat /sys/devices/system/cpu/cpu0/online\`
+				$BB echo '{ SPane:{
+					title:"Core 0"
+				}},
+					{ SCheckBox:{
+						label:"Enable",
+						description:"Allows to switch Core 0 on or off).",
+						default:'$CPU0',
+						action:"generic /sys/devices/system/cpu/cpu0/online"
+					}},'
+			fi`
+			`if [ -f "/sys/devices/system/cpu/cpu1/online" ]; then
+			CPU1=\`$BB cat /sys/devices/system/cpu/cpu1/online\`
+				$BB echo '{ SPane:{
+					title:"Core 1 "
+				}},
+					{ SCheckBox:{
+						label:"Enable",
+						description:"Allows to switch Core 1 on or off).",
+						default:'$CPU1',
+						action:"generic /sys/devices/system/cpu/cpu1/online"
+					}},'
+			fi`
+			`if [ -f "/sys/devices/system/cpu/cpu2/online" ]; then
+			CPU2=\`$BB cat /sys/devices/system/cpu/cpu2/online\`
+				$BB echo '{ SPane:{
+					title:"Core 2 "
+				}},
+					{ SCheckBox:{
+						label:"Enable",
+						description:"Allows to switch Core 2 on or off).",
+						default:'$CPU2',
+						action:"generic /sys/devices/system/cpu/cpu2/online"
+					}},'
+			fi`
+			`if [ -f "/sys/devices/system/cpu/cpu3/online" ]; then
+			CPU3=\`$BB cat /sys/devices/system/cpu/cpu3/online\`
+				$BB echo '{ SPane:{
+					title:"Core 3 "
+				}},
+					{ SCheckBox:{
+						label:"Enable",
+						description:"Allows to switch Core 3 on or off).",
+						default:'$CPU3',
+						action:"generic /sys/devices/system/cpu/cpu3/online"
+					}},'
+			fi`
+			{ SSpacer:{
+						height: 2
+					}},
+				{ SLiveLabel:{
+					refresh:0,
+					style:italic,
+					action:"live CpuClusterA57"
+				}},
+			`if [ -f "/sys/devices/system/cpu/cpu4/online" ]; then
+			CPU4=\`$BB cat /sys/devices/system/cpu/cpu4/online\`
+				$BB echo '{ SPane:{
+					title:"Core 4"
+				}},
+					{ SCheckBox:{
+						label:"Enable",
+						description:"Allows to switch Core 4 on or off).",
+						default:'$CPU4',
+						action:"generic /sys/devices/system/cpu/cpu4/online"
+					}},'
+			fi`
+			`if [ -f "/sys/devices/system/cpu/cpu5/online" ]; then
+			CPU5=\`$BB cat /sys/devices/system/cpu/cpu5/online\`
+				$BB echo '{ SPane:{
+					title:"Core 5 "
+				}},
+					{ SCheckBox:{
+						label:"Enable",
+						description:"Allows to switch Core 5 on or off).",
+						default:'$CPU5',
+						action:"generic /sys/devices/system/cpu/cpu5/online"
+					}},'
+			fi`
+			`if [ -f "/sys/devices/system/cpu/cpu6/online" ]; then
+			CPU6=\`$BB cat /sys/devices/system/cpu/cpu6/online\`
+				$BB echo '{ SPane:{
+					title:"Core 6 "
+				}},
+					{ SCheckBox:{
+						label:"Enable",
+						description:"Allows to switch Core 6 on or off).",
+						default:'$CPU6',
+						action:"generic /sys/devices/system/cpu/cpu6/online"
+					}},'
+			fi`
+			`if [ -f "/sys/devices/system/cpu/cpu7/online" ]; then
+			CPU7=\`$BB cat /sys/devices/system/cpu/cpu7/online\`
+				$BB echo '{ SPane:{
+					title:"Core 7 "
+				}},
+					{ SCheckBox:{
+						label:"Enable",
+						description:"Allows to switch Core 7 on or off).",
+						default:'$CPU7',
+						action:"generic /sys/devices/system/cpu/cpu7/online"
+					}},'
+			fi`
+		]
+}
+CTAG
