@@ -12,7 +12,7 @@ cat << CTAG
 					step:128,
 					min:128,
 					max:4096,
-					default:`$BB cat /sys/block/mmcblk0/queue/read_ahead_kb`,
+					default:`$BB cat /sys/block/sda/queue/read_ahead_kb`,
 					action:"ioset queue read_ahead_kb"
 				}},
 				{ SOptionList:{
@@ -67,25 +67,25 @@ cat << CTAG
 				{ SCheckBox:{
 					description:"Draw entropy from spinning (rotational) storage.",
 					label:"Add Random",
-					default:`$BB cat /sys/block/mmcblk0/queue/add_random`,
+					default:`$BB cat /sys/block/sda/queue/add_random`,
 					action:"ioset queue add_random"
 				}},
 				{ SCheckBox:{
 					description:"Maintain I/O statistics for this storage device. Disabling will break I/O monitoring apps.",
 					label:"I/O Stats",
-					default:`$BB cat /sys/block/mmcblk0/queue/iostats`,
+					default:`$BB cat /sys/block/sda/queue/iostats`,
 					action:"ioset queue iostats"
 				}},
 				{ SCheckBox:{
 					description:"Treat device as rotational storage.",
 					label:"Rotational",
-					default:`$BB cat /sys/block/mmcblk0/queue/rotational`,
+					default:`$BB cat /sys/block/sda/queue/rotational`,
 					action:"ioset queue rotational"
 				}},				
 				{ SOptionList:{
 					title:"No Merges",
 					description:"Types of merges (prioritization) the scheduler queue for this storage device allows.",
-					default:`$BB cat /sys/block/mmcblk0/queue/nomerges`,
+					default:`$BB cat /sys/block/sda/queue/nomerges`,
 					action:"ioset queue nomerges",
 					values:{
 						0:"All", 1:"Simple Only", 2:"None"
@@ -94,7 +94,7 @@ cat << CTAG
 				{ SOptionList:{
 					title:"RQ Affinity",
 					description:"Try to have scheduler requests complete on the CPU core they were made from. Higher is more aggressive. Some kernels only support 0-1.",
-					default:`$BB cat /sys/block/mmcblk0/queue/rq_affinity`,
+					default:`$BB cat /sys/block/sda/queue/rq_affinity`,
 					action:"ioset queue rq_affinity",
 					values:{
 						0:"Disabled", 1:"Enabled", 2:"Aggressive"
@@ -106,7 +106,7 @@ cat << CTAG
 					step:128,
 					min:128,
 					max:2048,
-					default:`$BB cat /sys/block/mmcblk0/queue/nr_requests`,
+					default:`$BB cat /sys/block/sda/queue/nr_requests`,
 					action:"ioset queue nr_requests"
 				}},
 			{ SPane:{

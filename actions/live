@@ -9,11 +9,11 @@ case $1 in
 	Bootloader)
 		$BB echo `sh $DEVICE LiveBootloader`;
 	;;
-   CPUFrequency)
-		$BB echo `sh $DEVICE LiveCPUFrequency`;
+   	Kyro1Frequency)
+		$BB echo `sh $DEVICE LiveKyro1Frequency`;
 	;;
-	CPU1Frequency)
-		$BB echo `sh $DEVICE LiveCPU1Frequency`;
+	KyroFrequency)
+		$BB echo `sh $DEVICE LiveKyroFrequency`;
 	;;
 	CPUScalingA53)
 		$BB echo `sh $DEVICE LiveCPUScalingA53`;
@@ -30,11 +30,11 @@ case $1 in
 	Memory)
 		$BB echo `sh $DEVICE LiveMemory`;
 	;;
-	TimeA53)
-		$BB echo `sh $DEVICE LiveTimeA53 $2 $3`;
+	Timekyro1)
+		$BB echo `sh $DEVICE LiveTimekyro1 $2 $3`;
 	;;
-	TimeA57)
-		$BB echo `sh $DEVICE LiveTimeA57 $2 $3`;
+	Timekyro2)
+		$BB echo `sh $DEVICE LiveTimekyro2 $2 $3`;
 	;;
 	TimeGpu)
 		$BB echo `sh $DEVICE LiveTimeGpu $2 $3`;
@@ -42,11 +42,11 @@ case $1 in
 	UpTime)
 		$BB echo `sh $DEVICE LiveUpTime`;
 	;;
-	UnUsedA53)
-		$BB echo -e "A53 Little Core@n`sh $DEVICE LiveUnUsedA53`";
+	UnUsedkyro1)
+		$BB echo -e "Kryo 1.6@n`sh $DEVICE LiveUnUsedkyro1`";
 	;;
-	UnUsedA57)
-		$BB echo -e "A57 Big Core@n`sh $DEVICE LiveUnUsedA57`";
+	UnUsedkyro2)
+		$BB echo -e "Kryo 2.2@n`sh $DEVICE LiveUnUsedkyro2`";
 	;;
 	UnUsedGpu)
 		$BB echo `sh $DEVICE LiveUnUsedGpu`;
@@ -81,11 +81,11 @@ case $1 in
 	CpuBoost)
 		$BB echo `sh $DEVICE LiveCpuBoost`;
 	;;
-	CpuClusterA53)
-		$BB echo `sh $DEVICE LiveCpuClusterA53`;
+	Kyro1)
+		$BB echo `sh $DEVICE LiveKyro1`;
 	;;
-	CpuClusterA57)
-		$BB echo `sh $DEVICE LiveCpuClusterA57`;
+	Kyro)
+		$BB echo `sh $DEVICE LiveKyro`;
 	;;
 	StateNotifier)
 		$BB echo `sh $DEVICE LiveStateNotifier`;

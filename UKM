@@ -17,13 +17,6 @@ if [ -e "/sbin/uci" ]; then
 	$BB rm -f /sbin/uci
 fi
 
-# Add Power tweaks Credit to henryzhang317
-
-echo "1" > /sys/module/qpnp_fg/parameters/debug_mask
-echo "0" > /sys/module/qpnp_fg/parameters/sense_type
-echo "1" > /sys/module/qpnp_fg/parameters/first_est_dump
-echo "99" > /sys/module/qpnp_smbcharger/parameters/vf_adjust_high_threshold
-echo "55" > /sys/module/qpnp_smbcharger/parameters/vf_adjust_low_threshold
 
 # Set SElinux to permisive on boot
 
@@ -63,8 +56,3 @@ if [ `$BB stat -c %a $UCI_XBIN` -lt "755" ]; then
 	$BB mount -o remount,ro /system
 fi
 
-# Reset uci config so it can be re-created on boot.
-
-$UCI_XBIN reset;
-$BB sleep 1;
-$UCI_XBIN;

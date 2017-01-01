@@ -111,61 +111,33 @@ cat << CTAG
 									sh $DEVICE CPUFrequencyList
 								$BB echo '}
 							}},'
-						elif [ $VALUE -eq 8 ]; then
+						elif [ $VALUE -eq 4 ]; then
 							$BB echo '{ SSeekBar:{
 								title:"CPU0 Input Boost Frequency",
 								action:"cpuboostibf 0",
 								values:{ 0:"Disabled", '
-									sh $DEVICE CPUFrequencyListA53
+									sh $DEVICE Kyro1FrequencyList
 								$BB echo '}
 							}},
 							{ SSeekBar:{
 								title:"CPU1 Input Boost Frequency",
 								action:"cpuboostibf 1",
 								values:{ 0:"Disabled", '
-									sh $DEVICE CPUFrequencyListA53
+									sh $DEVICE Kyro1FrequencyList
 								$BB echo '}
 							}},
 							{ SSeekBar:{
 								title:"CPU2 Input Boost Frequency",
 								action:"cpuboostibf 2",
 								values:{ 0:"Disabled", '
-									sh $DEVICE CPUFrequencyListA53
+									sh $DEVICE Kyro2FrequencyList
 								$BB echo '}
 							}},
 							{ SSeekBar:{
 								title:"CPU3 Input Boost Frequency",
 								action:"cpuboostibf 3",
 								values:{ 0:"Disabled", '
-									sh $DEVICE CPUFrequencyListA53
-								$BB echo '}
-							}},
-							{ SSeekBar:{
-								title:"CPU4 Input Boost Frequency",
-								action:"cpuboostibf 4",
-								values:{ 0:"Disabled", '
-									sh $DEVICE CPUFrequencyListA57
-								$BB echo '}
-							}},
-							{ SSeekBar:{
-								title:"CPU5 Input Boost Frequency",
-								action:"cpuboostibf 5",
-								values:{ 0:"Disabled", '
-									sh $DEVICE CPUFrequencyListA57
-								$BB echo '}
-							}},
-							{ SSeekBar:{
-								title:"CPU6 Input Boost Frequency",
-								action:"cpuboostibf 6",
-								values:{ 0:"Disabled", '
-									sh $DEVICE CPUFrequencyListA57
-								$BB echo '}
-							}},
-							{ SSeekBar:{
-								title:"CPU7 Input Boost Frequency",
-								action:"cpuboostibf 7",
-								values:{ 0:"Disabled", '
-									sh $DEVICE CPUFrequencyListA57
+									sh $DEVICE Kyro2FrequencyList
 								$BB echo '}
 							}},'
 						fi;
