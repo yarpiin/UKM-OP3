@@ -10,6 +10,19 @@ cat << CTAG
 					style:italic,
 					action:"live BatteryTemperature"
 				}},
+            { SPane:{
+				title:"Live Cpu Frequency:"
+			}},
+				{ SLiveLabel:{
+					refresh:3000,
+					style:italic,
+					action:"live Kyro1Frequency"
+				}},
+				{ SLiveLabel:{
+					refresh:3000,
+					style:italic,
+					action:"live KyroFrequency"
+				}},
 			{ SPane:{
 				title:"CPU Temperature:"
 			}},
@@ -17,6 +30,14 @@ cat << CTAG
 					refresh:3000,
 					style:italic,
 					action:"live CPUTemperature"
+				}},
+            { SPane:{
+				title:"Live GPU Frequency:"
+			}},
+				{ SLiveLabel:{
+					refresh:1000,
+					style:italic,
+					action:"live GPUFrequency"
 				}},
 			{ SPane:{
 				title:"Memory:"

@@ -32,7 +32,7 @@ case "$1" in
 			if [ $FREQ -le "2150400" ]; then
 				MAXCPU=$FREQ;
 			fi;
-		done < /sys/devices/system/cpu/cpu2/cpufreq/stats/time_in_state;
+		done < /sys/devices/system/cpu/cpu2/cpufreq/scaling_available_frequencies;
 
 		$BB echo $MAXCPU;
 	;;
@@ -63,7 +63,7 @@ case "$1" in
 				S=1;
 				MINCPU=$FREQ;
 			fi;
-		done < /sys/devices/system/cpu/cpu2/cpufreq/stats/time_in_state;
+		done < /sys/devices/system/cpu/cpu2/cpufreq/scaling_available_frequencies;
 
 		$BB echo $MINCPU;
 	;;
