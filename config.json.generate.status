@@ -14,12 +14,12 @@ cat << CTAG
 				title:"Live Cpu Frequency:"
 			}},
 				{ SLiveLabel:{
-					refresh:3000,
+					refresh:800,
 					style:italic,
 					action:"live Kyro1Frequency"
 				}},
 				{ SLiveLabel:{
-					refresh:3000,
+					refresh:800,
 					style:italic,
 					action:"live KyroFrequency"
 				}},
